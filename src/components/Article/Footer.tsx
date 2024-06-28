@@ -3,13 +3,13 @@ import share from '../../../images/icon-share.svg';
 
 export default function Footer(){
     return( 
-        <div>
-            <img src={avatar} alt="" />
-            <div>
-                <h2>Michelle Appleton</h2>
-                <p>28 Jun 2020</p>
+        <div className='b-footer'>
+            <img className="b-footer__image" src={avatar} alt="" />
+            <div className='b-footer-description'>
+                <h2 className='b-footer-description__name'>Michelle Appleton</h2>
+                <p className='b-footer-description__date'>28 Jun 2020</p>
             </div>
-            <button><img src={share} alt="" /></button>
+            <button className='b-footer__share'><img src={share} alt="" /></button>
         </div>
     )
 }

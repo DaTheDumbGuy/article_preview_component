@@ -7,7 +7,6 @@ export default function Article(){
         <article className="b-article">
             <HeroImg/>
             <Main/>
-            <Footer/>
         </article>
     )
 }
