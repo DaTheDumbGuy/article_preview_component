@@ -17,9 +17,10 @@ body{
     max-width:350px;
     border-radius:8px;
     overflow: hidden;
+
+
     
     .b-header{
-        display:inline-block;
         height:230px;
         width:100%;
         
@@ -33,48 +34,107 @@ body{
         }
     }
     .b-main{
-        background:white;
-        padding:2em 2.5em;
+        background:hsl(210, 46%, 95%);
+        padding:2em 2.5em 0 2.5em;
+        // background:hsl(217, 19%, 35%);
         &__title{
             margin-bottom:0.8em;
             font-weight: 700;
             line-height: 1.5em;
             font-size: 1.4em;
+            color:hsl(217, 19%, 35%);
         }
         &__description{
-            margin-bottom:1.5em;
+            // margin-bottom:1.5em;
             line-height: 1.5em;
             word-spacing:0.25em;
+            color: hsl(214, 17%, 51%);
+            font-weight:500;
         }
+        
+    }
+    .b-footer{
+        background:hsl(210, 46%, 95%);
+        position:relative;
+        display:flex;
+        align-items: center;
+        // padding-top:1em;
+        padding: 1em 2.5em 0;
+        &__image{
+            height:40px;
+            width: 40px;
+            border-radius:50%;
+        }
+        &-description{
+            margin-left:1em;
+            padding:15px 0;
+            // color: hsl(214, 17%, 51%);
 
-        .b-footer{
-            display:flex;
-            align-items: center;
-        
-            &__image{
-                height:40px;
-                width: 40px;
-                border-radius:50%;
+            &__name{
+                font-size:1em;
+                color:hsl(217, 19%, 35%);
             }
-            &-description{
-                margin-left:1em;
-                padding:15px 0;
-                &__name{
-                    font-size:1em;
-                }
-                &__date{
-                    
-                }
+            &__date{
+                color:hsl(212, 23%, 69%);
+                font-weight:500;
             }
-            &__share{
-                border-radius:50%;
-                border:none;
-                width:30px;
-                height:30px;
-                margin-left: auto;
-            }
-        
         }
+        &__share{
+            border-radius:50%;
+            border:none;
+            width:35px;
+            height:35px;
+            margin-left: auto;
+            // padding:5px;
+            background:hsla(212, 23%, 69%, 0.2);
+        }
+        &-modal{
+            position:absolute;
+            background:hsl(217, 19%, 35%);
+            left:0;
+            top:20px;
+            bottom:0;
+            right:0;
+            padding:1em 2.5em;
+        }
+        
     }
     
+}
+@media (min-width:768px) {
+    .b-article{
+        display:flex;
+        max-width: unset;
+        width:800px;
+        height:300px;
+
+        .b-header{
+            height:100%;
+            flex: 1.5;
+
+            &__hero{
+                background-position: left;
+            }
+        }
+
+        .b-main{
+            flex:2;
+            padding-bottom:unset;
+            &__title{
+                font-size:1.5em;
+            }
+
+            &__description{
+                margin-bottom:1em;
+            }
+        }
+        // .b-footer{
+            
+
+        //     &-description{
+        //         // background:red;
+        //         padding-bottom:0;
+        //     }
+        // }
+    }
 }
