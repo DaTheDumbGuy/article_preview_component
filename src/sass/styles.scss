@@ -34,8 +34,9 @@ body{
         }
     }
     .b-main{
+        position: relative;
         background:hsl(210, 46%, 95%);
-        padding:2em 2.5em 0 2.5em;
+        padding:2em 2.5em 1em 2.5em;
         // background:hsl(217, 19%, 35%);
         &__title{
             margin-bottom:0.8em;
@@ -51,54 +52,75 @@ body{
             color: hsl(214, 17%, 51%);
             font-weight:500;
         }
-        
-    }
-    .b-footer{
-        background:hsl(210, 46%, 95%);
-        position:relative;
-        display:flex;
-        align-items: center;
-        // padding-top:1em;
-        padding: 1em 2.5em 0;
-        &__image{
-            height:40px;
-            width: 40px;
-            border-radius:50%;
-        }
-        &-description{
-            margin-left:1em;
-            padding:15px 0;
-            // color: hsl(214, 17%, 51%);
 
-            &__name{
-                font-size:1em;
-                color:hsl(217, 19%, 35%);
+        .b-footer{
+            background:hsl(210, 46%, 95%);
+            display:flex;
+            align-items: center;
+            margin-top: 1em;
+            &__image{
+                height:40px;
+                width: 40px;
+                border-radius:50%;
             }
-            &__date{
-                color:hsl(212, 23%, 69%);
-                font-weight:500;
+            &-description{
+                margin-left:1em;
+                padding:15px 0;
+                // color: hsl(214, 17%, 51%);
+    
+                &__name{
+                    font-size:1em;
+                    color:hsl(217, 19%, 35%);
+                }
+                &__date{
+                    color:hsl(212, 23%, 69%);
+                    font-weight:500;
+                }
             }
-        }
-        &__share{
-            border-radius:50%;
-            border:none;
-            width:35px;
-            height:35px;
-            margin-left: auto;
-            // padding:5px;
-            background:hsla(212, 23%, 69%, 0.2);
-        }
-        &-modal{
-            position:absolute;
-            background:hsl(217, 19%, 35%);
-            left:0;
-            top:20px;
-            bottom:0;
-            right:0;
-            padding:1em 2.5em;
+            &__share{
+                border-radius:50%;
+                border:none;
+                width:35px;
+                height:35px;
+                margin-left: auto;
+                background:hsla(212, 23%, 69%, 0.2);
+    
+                &.modal{
+                    background: hsl(214, 17%, 51%);
+                    img{
+                        background-color:hsl(210, 46%, 95%);
+                    }
+                }
+            }
+            &-modal{
+                position:absolute;
+                display:flex;
+                background:hsl(217, 19%, 35%);
+                left:0;
+                bottom:0;
+                right:0;
+                padding:1em 2.5em;
+    
+                &-links{
+                    list-style-type: none;
+                    flex:2;
+                    display:flex;
+                    align-items: center;
+                    // justify-content: ;
+                    gap:1.5em;
+    
+                    &:first-child{
+                        text-transform: uppercase;
+                        letter-spacing: 0.3em;
+                        color:hsl(212, 23%, 69%);
+                    }
+                }
+            }
+            
         }
         
     }
+    
     
 }
 @media (min-width:768px) {
@@ -107,8 +129,11 @@ body{
         max-width: unset;
         width:800px;
         height:300px;
+        overflow: unset;
 
         .b-header{
+            overflow: hidden;
+            border-radius:8px;
             height:100%;
             flex: 1.5;
 
@@ -118,6 +143,7 @@ body{
         }
 
         .b-main{
+            position: unset;
             flex:2;
             padding-bottom:unset;
             &__title{
@@ -127,14 +153,29 @@ body{
             &__description{
                 margin-bottom:1em;
             }
-        }
-        // .b-footer{
-            
 
-        //     &-description{
-        //         // background:red;
-        //         padding-bottom:0;
-        //     }
-        // }
+            .b-footer{
+                position: relative;
+
+                &-modal{
+                    // background:red;      =
+                    right: -25%;
+                    left: unset;
+                    bottom: unset;
+                    top:-40px;
+                    width:fit-content;
+
+                    &::before{
+                        position: absolute;
+                        bottom:0;
+                    }
+                    
+                    .b-footer__share.modal{
+                        display: none;
+                    }
+
+                }
+            }
+        }
     }
 }
